@@ -4,347 +4,1470 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OROMMA Experience Germany</title>
-  <meta name="description" content="A private curated jewelry experience in Munich, Germany by OROMMA. October 21–26. Limited to 10 participants." />
+  <meta
+    name="description"
+    content="A curated private jewelry journey in Munich, Germany by OROMMA. October 21–26. Limited to 10 participants."
+  />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    :root{--ink:#171410;--muted:#6c6258;--ivory:#fffaf2;--gold:#b89647;--gold2:#d8be73;--dark:#151310;--line:rgba(184,150,71,.32)}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--ivory);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .serif{font-family:'Playfair Display',serif}
-    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.32em;color:var(--gold);font-weight:600}
-    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-
-    .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(21,19,16,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(216,190,115,.18)}
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{font-family:'Playfair Display',serif;color:#fff;font-size:22px;letter-spacing:.16em}
-    .brand span{color:var(--gold)}
-    .nav-links{display:flex;gap:24px;align-items:center}
-    .nav-links a{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:.25s}
-    .nav-links a:hover{color:var(--gold2)}
-    .nav-cta{border:1px solid rgba(216,190,115,.55);padding:10px 15px;border-radius:999px;color:#fff!important}
-
-    .hero{min-height:100vh;position:relative;display:grid;place-items:center;overflow:hidden;background:#12100d}
-    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7),rgba(0,0,0,.35),rgba(0,0,0,.25)),url('munich.png') center/cover;transform:scale(1.03)}
-    .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 45%,transparent 0 20%,rgba(0,0,0,.4) 72%),linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.72))}
-    .hero-content{position:relative;z-index:2;color:#fff;padding-top:90px}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end}
-    .hero h1{font-size:clamp(54px,8vw,112px);line-height:.92;margin:22px 0 26px;font-weight:500;letter-spacing:-.045em}
-    .hero p{font-size:clamp(18px,2.1vw,25px);max-width:670px;color:rgba(255,255,255,.86);font-weight:300}
-    .hero-quote{margin-top:45px;font-family:'Playfair Display',serif;font-size:24px;color:#f4e7c6}
-    .hero-card{border:1px solid rgba(216,190,115,.28);background:rgba(255,250,242,.08);backdrop-filter:blur(20px);padding:34px;border-radius:28px}
-    .meta{display:grid;gap:18px}
-    .meta div{border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:16px}
-    .meta strong{display:block;color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.22em}
-    .meta span{color:rgba(255,255,255,.72);font-size:14px}
-
-    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:15px 22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;transition:.25s}
-    .btn-primary{background:var(--gold);color:#171410}
-    .btn-primary:hover{background:var(--gold2);transform:translateY(-2px)}
-    .btn-secondary{border:1px solid rgba(255,255,255,.35);color:#fff}
-    .btn-secondary:hover{border-color:var(--gold);color:var(--gold2)}
-
-    section{padding:120px 0}
-    .intro{background:var(--ivory)}
-    .two-col{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
-    .intro .text{font-size:clamp(26px,4vw,48px);line-height:1.17;letter-spacing:-.035em;color:#251f18}
-    .intro .copy{color:var(--muted);font-size:18px;max-width:570px}
-    .thin-line{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:36px 0}
-
-    .dark{background:var(--dark);color:#fff}
-    .section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:58px}
-    .section-head h2{font-size:clamp(40px,5.4vw,78px);line-height:1;margin:8px 0 0;font-weight:500;letter-spacing:-.04em}
-    .section-head p{max-width:450px;color:rgba(255,255,255,.64)}
-
-    .highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .highlight{background:rgba(255,255,255,.04);border:1px solid rgba(216,190,115,.18);border-radius:28px;overflow:hidden}
-    .highlight-img{height:285px;overflow:hidden}
-    .highlight img{width:100%;height:100%;object-fit:cover;transition:1s}
-    .highlight:hover img{transform:scale(1.06)}
-    .highlight-body{padding:26px}
-    .highlight h3{font-family:'Playfair Display',serif;font-size:27px;line-height:1.1;margin:0 0 14px}
-    .highlight p{color:rgba(255,255,255,.62);font-size:14px;margin:0}
-
-    .curator{background:#f4eadb}
-    .curator-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:90px;align-items:center}
-    .portrait{border-radius:38px;overflow:hidden;box-shadow:0 40px 120px rgba(44,31,16,.16);border:1px solid rgba(184,150,71,.22);max-width:475px}
-    .portrait img{height:620px;width:100%;object-fit:cover}
-    .curator h2{font-size:clamp(46px,6vw,86px);line-height:.96;margin:12px 0 30px;font-weight:500;letter-spacing:-.045em}
-    .curator p{font-size:19px;color:#554b42;max-width:570px}
-    .pull{font-family:'Playfair Display',serif!important;font-size:31px!important;line-height:1.18!important;color:#201a14!important;margin:34px 0}
-
-    .journey{background:var(--ivory)}
-    .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .day{border:1px solid rgba(184,150,71,.27);background:#fffaf3;border-radius:26px;padding:28px;min-height:255px}
-    .day .num{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font-size:11px;font-weight:700}
-    .day h3{font-family:'Playfair Display',serif;font-size:30px;line-height:1.1;margin:18px 0 14px}
-    .day p{color:var(--muted);font-size:15px}
-
-    .included{background:#181511;color:#fff}
-    .included-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-    .checklist{display:grid;gap:14px}
-    .check{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.78)}
-    .check:before{content:"✦";color:var(--gold);flex:none}
-    .image-panel{border-radius:34px;overflow:hidden;min-height:560px;border:1px solid rgba(216,190,115,.2)}
-    .image-panel img{width:100%;height:100%;object-fit:cover}
-
-    .pricing{background:#f3eadc}
-    .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .price-card{background:#fffaf3;border:1px solid rgba(184,150,71,.3);border-radius:34px;padding:38px}
-    .price-card.featured{background:#1b1814;color:#fff}
-    .price{font-family:'Playfair Display',serif;font-size:66px;letter-spacing:-.06em;line-height:1;margin:25px 0}
-    .price-card p,.price-card li{color:#6b6056}
-    .price-card.featured p,.price-card.featured li{color:rgba(255,255,255,.7)}
-    .deposit{margin-top:28px;padding:24px;border-radius:24px;background:rgba(184,150,71,.1);border:1px solid rgba(184,150,71,.22)}
-    .policy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-    .policy-card{background:rgba(255,255,255,.52);border:1px solid rgba(184,150,71,.22);border-radius:24px;padding:26px}
-    .policy-card strong{font-family:'Playfair Display',serif;font-size:25px;display:block;margin-bottom:8px}
-
-    .reserve{background:#12100d;color:#fff;text-align:center;position:relative;overflow:hidden}
-    .reserve:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(18,16,13,.78),rgba(18,16,13,.86)),url('craftsmanship.png') center/cover;opacity:.9}
-    .reserve .container{position:relative;z-index:1}
-    .reserve h2{font-size:clamp(48px,7vw,96px);line-height:.95;margin:18px auto 26px;max-width:900px;font-weight:500;letter-spacing:-.05em}
-    .reserve p{max-width:650px;margin:0 auto;color:rgba(255,255,255,.72);font-size:18px}
-    .payment-note{margin-top:24px;color:rgba(255,255,255,.55)!important;font-size:13px!important}
-
-    .footer{background:#0e0c0a;color:rgba(255,255,255,.55);padding:38px 0}
-    .footer-inner{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-    .footer a{color:var(--gold2)}
-
-    @media(max-width:900px){
-      .nav-links{display:none}
-      .hero-grid,.two-col,.curator-grid,.included-grid,.price-grid{grid-template-columns:1fr}
-      .hero{min-height:920px}
-      .highlights,.timeline,.policy{grid-template-columns:1fr}
-      .section-head{display:block}
-      .portrait img{height:520px}
-      section{padding:86px 0}
+    :root {
+      --bg: #fbf7f1;
+      --bg-soft: #f4ede2;
+      --bg-warm: #efe4d2;
+      --card: #fffaf3;
+      --ink: #17130f;
+      --muted: #6d6258;
+      --gold: #b49047;
+      --gold-soft: #d4b978;
+      --line: rgba(180, 144, 71, 0.25);
+      --dark: #12100d;
+      --dark-soft: #1a1713;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(26, 19, 12, 0.08);
+      --radius-xl: 36px;
+      --radius-lg: 26px;
+      --radius-md: 20px;
+      --container: min(1180px, calc(100% - 36px));
     }
 
-    @media(max-width:520px){
-      .container{width:min(100% - 28px,1180px)}
-      .hero h1{font-size:54px}
-      .buttons{display:grid}
-      .btn{width:100%}
-      .price{font-size:54px}
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Manrope", system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .serif {
+      font-family: "Playfair Display", serif;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 46px;
+    }
+
+    .section-head h2 {
+      margin: 10px 0 0;
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+      font-family: "Playfair Display", serif;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 460px;
+      justify-self: end;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--gold-soft);
+      border-color: var(--gold-soft);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      color: var(--gold-soft);
+      border-color: var(--gold-soft);
+    }
+
+    .btn-outline-dark {
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: transparent;
+    }
+
+    .btn-outline-dark:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(18, 16, 13, 0.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(212, 185, 120, 0.12);
+    }
+
+    .nav-inner {
+      width: var(--container);
+      margin: 0 auto;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .logo-wrap img {
+      width: 172px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: brightness(1.02);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-soft);
+    }
+
+    .nav-cta {
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 185, 120, 0.4);
+      color: var(--white) !important;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid rgba(212, 185, 120, 0.4);
+      background: transparent;
+      color: var(--white);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+    }
+
+    .mobile-panel {
+      display: none;
+      background: rgba(18, 16, 13, 0.96);
+      border-top: 1px solid rgba(212, 185, 120, 0.1);
+    }
+
+    .mobile-panel.open {
+      display: block;
+    }
+
+    .mobile-panel-inner {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 14px 0 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-panel a {
+      color: rgba(255, 255, 255, 0.82);
+      padding: 10px 0;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--dark);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.28)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.58)),
+        url("munich.png") center center / cover no-repeat;
+      transform: scale(1.03);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(212, 185, 120, 0.08), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(212, 185, 120, 0.07), transparent 24%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: var(--container);
+      padding-top: 110px;
+      padding-bottom: 60px;
+      color: var(--white);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+    }
+
+    .hero-copy h1 {
+      margin: 16px 0 24px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(50px, 7vw, 102px);
+      line-height: 0.92;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      font-size: clamp(18px, 2vw, 23px);
+      max-width: 650px;
+      color: rgba(255, 255, 255, 0.84);
+      font-weight: 300;
+    }
+
+    .hero-note {
+      margin-top: 34px;
+      font-family: "Playfair Display", serif;
+      color: #f2e1b6;
+      font-size: 26px;
+      line-height: 1.2;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+    }
+
+    .hero-card {
+      background: rgba(255, 250, 243, 0.08);
+      border: 1px solid rgba(212, 185, 120, 0.24);
+      border-radius: 30px;
+      padding: 32px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero-card-title {
+      margin: 0 0 24px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 700;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-meta-item {
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-meta-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .hero-meta-item strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin-bottom: 6px;
+    }
+
+    .hero-meta-item span {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    /* INTRO */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .intro-big {
+      margin: 10px 0 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4.4vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: #201912;
+    }
+
+    .intro-copy p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .fact {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .fact span {
+      font-size: 15px;
+      color: #3d352d;
+      line-height: 1.5;
+      display: block;
+    }
+
+    /* HIGHLIGHTS */
+    .highlights-wrap {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .highlights-wrap .section-head p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .highlight-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 185, 120, 0.16);
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.28s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 185, 120, 0.36);
+    }
+
+    .highlight-image {
+      height: 265px;
+      overflow: hidden;
+    }
+
+    .highlight-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.8s ease;
+    }
+
+    .highlight-card:hover .highlight-image img {
+      transform: scale(1.05);
+    }
+
+    .highlight-body {
+      padding: 24px;
+    }
+
+    .highlight-body h3 {
+      margin: 0 0 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      line-height: 1.05;
+      font-weight: 600;
+    }
+
+    .highlight-body p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* JOURNEY */
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .day-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 28px;
+      min-height: 250px;
+      box-shadow: var(--shadow);
+    }
+
+    .day-tag {
+      color: var(--gold);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+    }
+
+    .day-card h3 {
+      margin: 16px 0 14px;
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      line-height: 1.08;
+      font-weight: 600;
+      color: #1f1812;
+    }
+
+    .day-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* CURATOR */
+    .curator-wrap {
+      background: var(--bg-soft);
+    }
+
+    .curator-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 78px;
+      align-items: center;
+    }
+
+    .curator-photo {
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 36px 90px rgba(40, 25, 10, 0.12);
+      border: 1px solid rgba(180, 144, 71, 0.18);
+      background: #e7d8c1;
+    }
+
+    .curator-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .curator-copy h2 {
+      margin: 14px 0 28px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+      color: #1d1711;
+    }
+
+    .curator-copy p {
+      margin: 0 0 18px;
+      color: #5d5248;
+      font-size: 18px;
+    }
+
+    .curator-pull {
+      margin: 28px 0 !important;
+      font-family: "Playfair Display", serif;
+      font-size: 30px !important;
+      line-height: 1.18 !important;
+      color: #211912 !important;
+      max-width: 560px;
+    }
+
+    .curator-sign {
+      margin-top: 24px;
+      font-size: 15px;
+      color: #3f352e;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* INCLUDED */
+    .included-wrap {
+      background: var(--dark-soft);
+      color: var(--white);
+    }
+
+    .included-wrap .section-head p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .included-panel {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 185, 120, 0.16);
+      border-radius: 30px;
+      padding: 30px;
+    }
+
+    .included-panel h3 {
+      margin: 0 0 20px;
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .included-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .included-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .included-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .included-item::before {
+      content: "✦";
+      color: var(--gold-soft);
+      flex: none;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+
+    .included-visual {
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 185, 120, 0.18);
+      min-height: 100%;
+      background: #201b16;
+    }
+
+    .included-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 460px;
+    }
+
+    .not-included {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(212, 185, 120, 0.08);
+      border: 1px solid rgba(212, 185, 120, 0.18);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+    }
+
+    /* PRICING */
+    .pricing-wrap {
+      background: var(--bg-warm);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .price-card.featured {
+      background: var(--dark);
+      color: var(--white);
+      border-color: rgba(212, 185, 120, 0.24);
+    }
+
+    .price-label {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .price-card.featured .price-label {
+      color: var(--gold-soft);
+    }
+
+    .price-value {
+      margin: 18px 0 18px;
+      font-family: "Playfair Display", serif;
+      font-size: 66px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 600;
+    }
+
+    .price-card p {
+      margin: 0 0 16px;
+      color: #5f554b;
+      font-size: 15px;
+    }
+
+    .price-card.featured p {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .price-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #5f554b;
+      font-size: 15px;
+    }
+
+    .price-card.featured ul {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .price-card li + li {
+      margin-top: 8px;
+    }
+
+    .deposit-box {
+      margin-top: 24px;
+      background: rgba(180, 144, 71, 0.09);
+      border: 1px solid rgba(180, 144, 71, 0.18);
+      border-radius: 24px;
+      padding: 22px 22px;
+      color: #443a32;
+      font-size: 15px;
+    }
+
+    .deposit-box strong {
+      color: #1f1711;
+    }
+
+    .policy-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .policy-card {
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(180, 144, 71, 0.18);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .policy-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      color: #231b15;
+      line-height: 1.1;
+    }
+
+    .policy-card p {
+      margin: 0;
+      color: #64594f;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* RESERVE */
+    .reserve-wrap {
+      position: relative;
+      background: var(--dark);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .reserve-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(18, 16, 13, 0.82), rgba(18, 16, 13, 0.88)),
+        url("craftsmanship.png") center center / cover no-repeat;
+      opacity: 0.95;
+    }
+
+    .reserve-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .reserve-inner h2 {
+      margin: 14px auto 20px;
+      max-width: 900px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 88px);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      font-weight: 600;
+    }
+
+    .reserve-inner p {
+      max-width: 720px;
+      margin: 0 auto 14px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 18px;
+    }
+
+    .reserve-actions {
+      margin-top: 28px;
+      justify-content: center;
+    }
+
+    .small-note {
+      margin-top: 18px !important;
+      font-size: 13px !important;
+      color: rgba(255, 255, 255, 0.54) !important;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #0d0b09;
+      color: rgba(255, 255, 255, 0.58);
+      padding: 34px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo img {
+      width: 132px;
+      height: auto;
+      opacity: 0.9;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .footer-right a {
+      color: var(--gold-soft);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .highlights {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-grid,
+      .intro-grid,
+      .curator-grid,
+      .included-grid,
+      .section-head,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head p {
+        justify-self: start;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .hero {
+        min-height: 930px;
+      }
+
+      .journey-grid,
+      .policy-grid,
+      .highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .curator-photo img {
+        min-height: 520px;
+      }
+
+      .section {
+        padding: 88px 0;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(48px, 13vw, 78px);
+      }
+
+      .hero-note {
+        font-size: 22px;
+      }
+
+      .price-value {
+        font-size: 56px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-inner {
+        height: 72px;
+      }
+
+      .logo-wrap img {
+        width: 136px;
+      }
+
+      .hero-content {
+        padding-top: 96px;
+        padding-bottom: 40px;
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .btn-row,
+      .reserve-actions {
+        display: grid;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .highlight-body h3,
+      .day-card h3,
+      .included-panel h3 {
+        font-size: 26px;
+      }
+
+      .price-value {
+        font-size: 48px;
+      }
     }
   </style>
 </head>
-
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top">OROMMA<span>.</span></a>
-      <div class="nav-links">
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo-wrap" aria-label="OROMMA home">
+        <img src="oromma-logo.png" alt="OROMMA logo" />
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#experience">Experience</a>
         <a href="#highlights">Highlights</a>
-        <a href="#curator">Curator</a>
         <a href="#journey">Journey</a>
+        <a href="#curator">Curator</a>
         <a href="#included">Included</a>
         <a href="#pricing">Pricing</a>
-        <a class="nav-cta" href="#reserve">Reserve</a>
+        <a href="#reserve" class="nav-cta">Reserve</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+        Menu
+      </button>
+    </div>
+
+    <div class="mobile-panel" id="mobilePanel">
+      <div class="mobile-panel-inner">
+        <a href="#experience">Experience</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#journey">Journey</a>
+        <a href="#curator">Curator</a>
+        <a href="#included">Included</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reserve">Reserve</a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <main id="top">
     <section class="hero" id="experience">
-      <div class="container hero-content">
+      <div class="hero-content">
         <div class="hero-grid">
-          <div>
-            <div class="eyebrow">Germany · October 21–26 · Max 10 participants</div>
-            <h1 class="serif">OROMMA Experience Germany</h1>
-            <p>A private journey into gemstones, jewelry and refined discovery — curated for those who see beauty differently.</p>
-            <div class="hero-quote">Not everyone is meant to experience this.</div>
-            <div class="buttons">
-              <a class="btn btn-primary" href="#reserve">Reserve your private spot</a>
-              <a class="btn btn-secondary" href="#journey">View itinerary</a>
+          <div class="hero-copy">
+            <div class="eyebrow">Germany · October 21–26 · Limited to 10 participants</div>
+            <h1>OROMMA Experience Germany</h1>
+            <p>
+              A curated private journey into gemstones, jewelry, sourcing and refined discovery —
+              designed for those who want to experience the world of jewelry with beauty, clarity and ease.
+            </p>
+
+            <div class="hero-note">
+              More than a trip. A beautifully arranged way to enter a world that usually feels inaccessible.
+            </div>
+
+            <div class="hero-actions btn-row">
+              <a
+                class="btn btn-primary"
+                href="#reserve"
+              >
+                Request private reservation
+              </a>
+              <a
+                class="btn btn-secondary"
+                href="#journey"
+              >
+                View the journey
+              </a>
             </div>
           </div>
 
           <aside class="hero-card">
-            <div class="meta">
-              <div><strong>Location</strong><span>Munich, Germany</span></div>
-              <div><strong>Dates</strong><span>October 21–26, 2026</span></div>
-              <div><strong>Access</strong><span>Private early access to a leading European gem and jewelry fair</span></div>
-              <div><strong>Availability</strong><span>Limited to 10 carefully curated participants</span></div>
+            <h2 class="hero-card-title">A curated experience, thoughtfully arranged</h2>
+
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <strong>Location</strong>
+                <span>Munich, Germany — one of Bavaria’s most elegant and culturally rich cities.</span>
+              </div>
+
+              <div class="hero-meta-item">
+                <strong>Access</strong>
+                <span>Private early access to a leading European gem and jewelry fair, with guidance and calm direction.</span>
+              </div>
+
+              <div class="hero-meta-item">
+                <strong>Atmosphere</strong>
+                <span>A small curated group, beautiful pacing, selected places, and everything already arranged.</span>
+              </div>
+
+              <div class="hero-meta-item">
+                <strong>Ideal for</strong>
+                <span>Those who want to explore jewelry, gemstones and sourcing in a more intentional, elegant and clear way.</span>
+              </div>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="intro">
-      <div class="container two-col">
+    <section class="section">
+      <div class="container intro-grid">
         <div>
-          <div class="eyebrow">The feeling</div>
-          <div class="thin-line"></div>
+          <div class="eyebrow">Why this feels different</div>
+          <h2 class="intro-big">
+            It brings together emotion, access, beauty and clarity — without the overwhelm.
+          </h2>
         </div>
-        <div>
-          <h2 class="serif text">Most people visit jewelry fairs. Very few truly experience them.</h2>
-          <p class="copy">Without guidance, the world of gemstones and sourcing can feel overwhelming, chaotic and surface-level. This experience is designed to slow everything down — to give you clarity, to let you see what others miss, and to move with intention, taste and ease.</p>
+
+        <div class="intro-copy">
+          <p>
+            Most people visit jewelry fairs without truly knowing how to navigate them. There is too much information,
+            too many suppliers, too many decisions, and not enough calm guidance.
+          </p>
+          <p>
+            OROMMA Experience is designed to change that. It gives you a clear and beautiful way to explore the world of
+            gemstones, minerals, jewelry and sourcing, while enjoying Munich through a seamless, refined and well-curated journey.
+          </p>
+          <p>
+            It is not only about what you will see. It is about how you will experience it: with more confidence,
+            more direction, and more pleasure.
+          </p>
+
+          <div class="facts">
+            <div class="fact">
+              <strong>Curated group</strong>
+              <span>Maximum 10 participants, to keep the experience intentional and personal.</span>
+            </div>
+            <div class="fact">
+              <strong>Beautiful rhythm</strong>
+              <span>Fair access, city discovery, dining and Tegernsee — balanced with elegance and ease.</span>
+            </div>
+            <div class="fact">
+              <strong>Clear value</strong>
+              <span>You enjoy the experience while gaining insights that help you move through the fair with more clarity.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="dark" id="highlights">
+    <section class="section highlights-wrap" id="highlights">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="eyebrow">Curated Highlights</div>
-            <h2 class="serif">A private invitation to a rare world.</h2>
+            <h2>A journey built around access, atmosphere and discovery.</h2>
           </div>
-          <p>Every element has been arranged to feel seamless: the fair, the city, the lake, the rhythm, and the quiet confidence of being guided by a trained eye.</p>
+          <p>
+            Every part of the experience has been selected to feel elevated yet easy — from the fair itself, to the city,
+            to the lake, to the people you will share it with.
+          </p>
         </div>
 
         <div class="highlights">
-          <article class="highlight">
-            <div class="highlight-img"><img src="jewelry-fair.png" alt="Munich gem and jewelry fair"></div>
-            <div class="highlight-body"><h3>Leading European Fair</h3><p>Enter one of Europe’s most important gem, mineral and jewelry fairs with clarity and direction.</p></div>
+          <article class="highlight-card">
+            <div class="highlight-image">
+              <img src="jewelry-fair.png" alt="Munich gem and jewelry fair" />
+            </div>
+            <div class="highlight-body">
+              <h3>Leading European Gem & Jewelry Fair</h3>
+              <p>
+                Explore one of Europe’s most important gem, mineral and jewelry fairs with a more refined sense of direction.
+              </p>
+            </div>
           </article>
-          <article class="highlight">
-            <div class="highlight-img"><img src="craftsmanship.png" alt="Private jewelry access"></div>
-            <div class="highlight-body"><h3>Private Early Access</h3><p>Experience the atmosphere before the public opening, in a more refined and less crowded setting.</p></div>
+
+          <article class="highlight-card">
+            <div class="highlight-image">
+              <img src="craftsmanship.png" alt="Private jewelry access" />
+            </div>
+            <div class="highlight-body">
+              <h3>Private Early Access</h3>
+              <p>
+                Experience the fair before public opening, in a setting that feels calmer, more intimate and more exclusive.
+              </p>
+            </div>
           </article>
-          <article class="highlight">
-            <div class="highlight-img"><img src="tegernsee.png" alt="Lake Tegernsee"></div>
-            <div class="highlight-body"><h3>Tegernsee Experience</h3><p>A calm full day of scenery, lake atmosphere, village charm and Alpine beauty.</p></div>
+
+          <article class="highlight-card">
+            <div class="highlight-image">
+              <img src="tegernsee.png" alt="Lake Tegernsee" />
+            </div>
+            <div class="highlight-body">
+              <h3>Tegernsee Experience</h3>
+              <p>
+                A beautifully curated day of lake views, mountain atmosphere, village charm and natural elegance.
+              </p>
+            </div>
           </article>
-          <article class="highlight">
-            <div class="highlight-img"><img src="munich.png" alt="Munich city"></div>
-            <div class="highlight-body"><h3>Munich, Seamlessly Arranged</h3><p>City walks, local jewelry shops, dining, transfers and elegant details already considered.</p></div>
+
+          <article class="highlight-card">
+            <div class="highlight-image">
+              <img src="munich.png" alt="Munich city" />
+            </div>
+            <div class="highlight-body">
+              <h3>Munich, Seamlessly Arranged</h3>
+              <p>
+                City walks, local jewelry shops, selected dining and carefully planned details — all already considered for you.
+              </p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="curator" id="curator">
-      <div class="container curator-grid">
-        <div class="portrait"><img src="lily-curator.png" alt="Editorial portrait of Lily Camarena"></div>
-        <div>
-          <div class="eyebrow">Meet the Curator</div>
-          <h2 class="serif">Lily Camarena</h2>
-          <p>Lily Camarena is the founder of OROMMA. Her work is rooted in a refined sensitivity to beauty, detail and value — shaped through years of experience in the world of fine jewelry and gemstones.</p>
-          <p class="pull">Her role is not to guide you through the experience. It is to change the way you see it.</p>
-          <p>To bring clarity where others feel overwhelmed. To help you recognize what truly matters. To move with intention, taste and quiet confidence.</p>
-          <div class="thin-line"></div>
-          <p><strong>This experience is an extension of her eye.</strong></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="journey" id="journey">
+    <section class="section" id="journey">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="eyebrow">Your Curated Journey</div>
-            <h2 class="serif">A rhythm designed to unfold naturally.</h2>
+            <h2>Six days shaped with intention.</h2>
           </div>
-          <p style="color:#6c6258">Six days in Munich shaped around jewelry, sourcing, beauty, culture and ease.</p>
+          <p>
+            The experience combines jewelry, sourcing, discovery, culture and beautiful pacing —
+            so each day feels distinct while remaining coherent as a whole.
+          </p>
         </div>
 
-        <div class="timeline">
-          <article class="day"><div class="num">Day 1 · Oct 21</div><h3>Arrival & Settle In</h3><p>Private airport pick-up, hotel check-in and a relaxed evening to recharge after travel.</p></article>
-          <article class="day"><div class="num">Day 2 · Oct 22</div><h3>Jewelry Fair & Bavarian Night</h3><p>Early access to the fair, supplier navigation and a traditional Bavarian dinner experience.</p></article>
-          <article class="day"><div class="num">Day 3 · Oct 23</div><h3>Fair Exploration & Dinner</h3><p>Continued discovery and sourcing at the fair, followed by dinner in a carefully selected setting.</p></article>
-          <article class="day"><div class="num">Day 4 · Oct 24</div><h3>Munich & Local Jewelry Shops</h3><p>A curated walk through Munich’s distinctive jewelry shops, old town, Marienplatz and Frauenkirche.</p></article>
-          <article class="day"><div class="num">Day 5 · Oct 25</div><h3>Tegernsee Experience</h3><p>Rottach-Egern, Lake Tegernsee, boat experience, lunch by the lake and Wallberg viewpoint by cable car.</p></article>
-          <article class="day"><div class="num">Day 6 · Oct 26</div><h3>Departure</h3><p>Final breakfast, hotel pick-up and transfer to Munich Airport.</p></article>
+        <div class="journey-grid">
+          <article class="day-card">
+            <div class="day-tag">Day 1 · October 21</div>
+            <h3>Arrival & Settle In</h3>
+            <p>
+              Arrival in Munich, private airport pick-up, hotel check-in and a relaxed evening to settle into the experience.
+            </p>
+          </article>
+
+          <article class="day-card">
+            <div class="day-tag">Day 2 · October 22</div>
+            <h3>Jewelry Fair & Bavarian Night</h3>
+            <p>
+              Early access to the jewelry fair, guided introduction to the key areas, supplier insights, and a traditional Bavarian dinner.
+            </p>
+          </article>
+
+          <article class="day-card">
+            <div class="day-tag">Day 3 · October 23</div>
+            <h3>Fair Exploration & Dinner</h3>
+            <p>
+              Continued discovery and sourcing at the fair at your own pace, followed by dinner in a carefully chosen Munich setting.
+            </p>
+          </article>
+
+          <article class="day-card">
+            <div class="day-tag">Day 4 · October 24</div>
+            <h3>Munich & Local Jewelry Shops</h3>
+            <p>
+              A curated walk through distinctive jewelry shops, plus time in Marienplatz, the Old Town and Frauenkirche.
+            </p>
+          </article>
+
+          <article class="day-card">
+            <div class="day-tag">Day 5 · October 25</div>
+            <h3>Tegernsee Experience</h3>
+            <p>
+              Rottach-Egern, a scenic walk, lake atmosphere, lunch by the water and Wallberg viewpoint by cable car.
+            </p>
+          </article>
+
+          <article class="day-card">
+            <div class="day-tag">Day 6 · October 26</div>
+            <h3>Departure</h3>
+            <p>
+              Final breakfast, hotel pick-up and transfer to Munich Airport — a calm and well-arranged departure.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="included" id="included">
-      <div class="container included-grid">
-        <div>
-          <div class="eyebrow">What’s Included</div>
-          <h2 class="serif" style="font-size:clamp(42px,5vw,74px);line-height:1;margin:12px 0 36px">Everything arranged, so you can be fully present.</h2>
-          <div class="checklist">
-            <div class="check">Airport pick-up and drop-off</div>
-            <div class="check">All transportation throughout the experience</div>
-            <div class="check">Accommodation in a carefully selected centrally located hotel in Munich</div>
-            <div class="check">Daily breakfast</div>
-            <div class="check">Two days of early access to the jewelry fair, plus one public opening day</div>
-            <div class="check">Tegernsee experience, boat and cable car viewpoint</div>
-            <div class="check">Travel insurance: medical assistance, travel support and personal liability</div>
-            <div class="check">Welcome gift, expert guidance and professionally edited video</div>
-          </div>
+    <section class="section curator-wrap" id="curator">
+      <div class="container curator-grid">
+        <div class="curator-photo">
+          <img src="lily-portrait.jpg" alt="Portrait of Lily Camarena" />
         </div>
-        <div>
-          <div class="image-panel"><img src="tegernsee.png" alt="Tegernsee luxury experience"></div>
-          <div class="deposit"><strong>Not included:</strong> flights to/from Munich, personal expenses and cancellation insurance.</div>
+
+        <div class="curator-copy">
+          <div class="eyebrow">Meet the Curator</div>
+          <h2>Lily Camarena</h2>
+
+          <p>
+            Lily Camarena is the founder of OROMMA. Her work is rooted in a refined sensitivity to beauty, detail and value —
+            shaped through years of experience in the world of fine jewelry and gemstones.
+          </p>
+
+          <p class="curator-pull">
+            Her role is not simply to guide you through the experience. It is to help you see it differently.
+          </p>
+
+          <p>
+            To bring clarity where others feel overwhelmed. To help you recognize what truly matters.
+            To move through beauty, sourcing and discovery with more intention, taste and quiet confidence.
+          </p>
+
+          <div class="curator-sign">
+            This experience is an extension of her eye.
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="pricing" id="pricing">
+    <section class="section included-wrap" id="included">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Pricing & Reservation</div>
-            <h2 class="serif">Small, curated, limited.</h2>
+            <div class="eyebrow">What’s Included</div>
+            <h2>Everything essential, thoughtfully arranged.</h2>
           </div>
-          <p style="color:#6c6258">This is not an open trip. Spots are confirmed once the deposit is received.</p>
+          <p>
+            The goal is simple: remove the friction, preserve the elegance,
+            and let you focus on being fully present in the experience.
+          </p>
         </div>
 
-        <div class="price-grid">
+        <div class="included-grid">
+          <div class="included-panel">
+            <h3>Included</h3>
+
+            <div class="included-list">
+              <div class="included-item">Airport pick-up and drop-off</div>
+              <div class="included-item">All transportation throughout the experience</div>
+              <div class="included-item">Accommodation in a carefully selected centrally located hotel in Munich</div>
+              <div class="included-item">Daily breakfast</div>
+              <div class="included-item">Two days of early access to the jewelry fair, plus one additional public opening day</div>
+              <div class="included-item">Tegernsee experience including boat and cable car viewpoint</div>
+              <div class="included-item">Travel insurance coverage: medical assistance, travel support and personal liability</div>
+              <div class="included-item">A welcome gift, fair guidance and a professionally edited video of the experience</div>
+            </div>
+
+            <div class="not-included">
+              <strong>Not included:</strong> flights to/from Munich, personal expenses and cancellation insurance.
+            </div>
+          </div>
+
+          <div class="included-visual">
+            <img src="tegernsee.png" alt="Tegernsee experience" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-wrap" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Pricing & Payment Terms</div>
+            <h2>Clear, elegant and limited.</h2>
+          </div>
+          <p>
+            This is a small curated experience. Once the available places are filled, the experience is closed.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
           <article class="price-card featured">
-            <div class="eyebrow">Private Early Access</div>
-            <div class="price">€2,999</div>
+            <div class="price-label">Private Early Access</div>
+            <div class="price-value">€2,999</div>
             <p>Available for a limited time before public launch.</p>
             <ul>
               <li>Full payment by May 20th, 2026.</li>
               <li>Early access pricing applies only to full payments completed by this date.</li>
+              <li>If full payment is not completed by this date, the standard price will apply.</li>
             </ul>
           </article>
 
           <article class="price-card">
-            <div class="eyebrow">Standard Price</div>
-            <div class="price">€3,499</div>
+            <div class="price-label">Standard Price</div>
+            <div class="price-value">€3,499</div>
             <p>Applies after May 20th, 2026, or once early access spots are filled.</p>
             <ul>
               <li>Balance must be fully paid by August 1st, 2026.</li>
-              <li>Unpaid balance by deadline may release your spot.</li>
+              <li>Spot is confirmed once the deposit is received.</li>
+              <li>Unpaid balance by the deadline may release the spot.</li>
             </ul>
           </article>
         </div>
 
-        <div class="deposit"><strong>Deposit to reserve your spot: €1,000.</strong> Non-refundable, as it covers initial commitments and reservations made on your behalf.</div>
+        <div class="deposit-box">
+          <strong>Deposit to reserve your spot: €1,000.</strong>
+          This deposit is non-refundable, as it covers initial commitments and reservations made on your behalf.
+        </div>
 
-        <div class="policy">
-          <div class="policy-card"><strong>100% refund</strong><p>Up to July 22nd, 2026, excluding deposit.</p></div>
-          <div class="policy-card"><strong>50% refund</strong><p>July 23rd to August 21st, 2026, excluding deposit.</p></div>
-          <div class="policy-card"><strong>No refund</strong><p>After August 21st, 2026. All deposits are non-refundable.</p></div>
+        <div class="policy-grid">
+          <article class="policy-card">
+            <strong>100% refund</strong>
+            <p>Up to July 22nd, 2026. Of the total amount paid, excluding deposit.</p>
+          </article>
+
+          <article class="policy-card">
+            <strong>50% refund</strong>
+            <p>From July 23rd to August 21st, 2026. Of the total amount paid, excluding deposit.</p>
+          </article>
+
+          <article class="policy-card">
+            <strong>No refund</strong>
+            <p>After August 21st, 2026. All deposits are non-refundable regardless of cancellation date.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="reserve" id="reserve">
-      <div class="container">
+    <section class="section reserve-wrap" id="reserve">
+      <div class="container reserve-inner">
         <div class="eyebrow">Reserve Your Spot</div>
-        <h2 class="serif">If this resonates with you, you already know.</h2>
-        <p>This is not for everyone. But if it feels aligned, it’s because it is. Only 10 participants. Spot confirmed once deposit is received.</p>
-        <div class="buttons" style="justify-content:center">
-          <a class="btn btn-primary" href="mailto:sales@orommajewelry.com?subject=OROMMA%20Experience%20Germany%20Reservation">Request private reservation</a>
-          <a class="btn btn-secondary" href="https://www.instagram.com/orommajewelry/" target="_blank" rel="noopener">Contact on Instagram</a>
+        <h2>If it feels aligned, it probably is.</h2>
+        <p>
+          This experience is not designed for everyone. It is designed for those who value beauty,
+          access, intention and a more refined way of entering the world of jewelry.
+        </p>
+        <p>
+          Spots are limited to 10 participants.
+        </p>
+
+        <div class="btn-row reserve-actions">
+          <a
+            class="btn btn-primary"
+            href="mailto:sales@orommajewelry.com?subject=OROMMA%20Experience%20Germany%20Reservation"
+          >
+            Request private reservation
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://www.instagram.com/orommajewelry/"
+            target="_blank"
+            rel="noopener"
+          >
+            Contact on Instagram
+          </a>
         </div>
-        <p class="payment-note">Stripe and SumUp payment links will be connected after final approval.</p>
+
+        <p class="small-note">
+          Stripe and SumUp payment links can be connected in the next phase once the final design is approved.
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div>© 2026 OROMMA Experience · Germany</div>
-      <div><a href="mailto:sales@orommajewelry.com">sales@orommajewelry.com</a> · <a href="https://www.instagram.com/orommajewelry/" target="_blank" rel="noopener">@orommajewelry</a></div>
+      <div class="footer-logo">
+        <img src="oromma-logo.png" alt="OROMMA logo" />
+      </div>
+
+      <div class="footer-right">
+        <span>© 2026 OROMMA Experience Germany</span>
+        <span>·</span>
+        <a href="mailto:sales@orommajewelry.com">sales@orommajewelry.com</a>
+        <span>·</span>
+        <a href="https://www.instagram.com/orommajewelry/" target="_blank" rel="noopener">@orommajewelry</a>
+      </div>
     </div>
   </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobilePanel = document.getElementById("mobilePanel");
+    const mobileLinks = mobilePanel.querySelectorAll("a");
+
+    menuBtn.addEventListener("click", () => {
+      mobilePanel.classList.toggle("open");
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobilePanel.classList.remove("open");
+      });
+    });
+  </script>
 </body>
 </html>
