@@ -27,6 +27,7 @@
       --ink: #17130f;
       --muted: #6d6258;
       --gold: #b49047;
+      --gold-strong: #d8b35c;
       --gold-soft: #d4b978;
       --line: rgba(180, 144, 71, 0.25);
       --dark: #12100d;
@@ -36,8 +37,13 @@
       --container: min(1180px, calc(100% - 36px));
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -48,10 +54,20 @@
       overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .container { width: var(--container); margin: 0 auto; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
 
     .eyebrow {
       font-size: 11px;
@@ -61,7 +77,9 @@
       font-weight: 700;
     }
 
-    .section { padding: 110px 0; }
+    .section {
+      padding: 110px 0;
+    }
 
     .section-head {
       display: grid;
@@ -278,7 +296,17 @@
       align-items: end;
     }
 
-    .hero-copy { max-width: 760px; }
+    .hero-copy {
+      max-width: 760px;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-strong);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.30em;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.46);
+    }
 
     .hero-copy h1 {
       margin: 16px 0 24px;
@@ -306,7 +334,9 @@
       max-width: 650px;
     }
 
-    .hero-actions { margin-top: 32px; }
+    .hero-actions {
+      margin-top: 32px;
+    }
 
     .hero-card {
       background: rgba(255, 250, 243, 0.08);
@@ -326,7 +356,10 @@
       font-weight: 700;
     }
 
-    .hero-meta { display: grid; gap: 16px; }
+    .hero-meta {
+      display: grid;
+      gap: 16px;
+    }
 
     .hero-meta-item {
       padding-bottom: 16px;
@@ -936,6 +969,12 @@
 
       .hero-card {
         padding: 24px;
+      }
+
+      .hero .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        line-height: 1.45;
       }
 
       .btn-row,
