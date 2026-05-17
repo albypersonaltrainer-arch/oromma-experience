@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>OROMMA Experience Germany</title>
+
   <meta
     name="description"
-    content="A curated private jewelry journey in Munich, Germany by OROMMA. October 21–26. Limited to 10 participants."
+    content="A private group experience in Munich, Germany, centered around gemstones, minerals, jewelry, beautiful places, and unforgettable moments."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,9 +33,6 @@
       --dark-soft: #1a1713;
       --white: #ffffff;
       --shadow: 0 24px 70px rgba(26, 19, 12, 0.08);
-      --radius-xl: 36px;
-      --radius-lg: 26px;
-      --radius-md: 20px;
       --container: min(1180px, calc(100% - 36px));
     }
 
@@ -67,10 +66,6 @@
     .container {
       width: var(--container);
       margin: 0 auto;
-    }
-
-    .serif {
-      font-family: "Playfair Display", serif;
     }
 
     .eyebrow {
@@ -154,19 +149,6 @@
       border-color: var(--gold-soft);
     }
 
-    .btn-outline-dark {
-      color: var(--ink);
-      border: 1px solid var(--line);
-      background: transparent;
-    }
-
-    .btn-outline-dark:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    /* NAV */
     .nav {
       position: fixed;
       top: 0;
@@ -200,7 +182,6 @@
       max-width: 100%;
       height: auto;
       object-fit: contain;
-      filter: brightness(1.02);
     }
 
     .nav-links {
@@ -268,7 +249,6 @@
       text-transform: uppercase;
     }
 
-    /* HERO */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -316,7 +296,7 @@
     }
 
     .hero-copy {
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .hero-copy h1 {
@@ -331,7 +311,7 @@
     .hero-copy p {
       margin: 0;
       font-size: clamp(18px, 2vw, 23px);
-      max-width: 650px;
+      max-width: 700px;
       color: rgba(255, 255, 255, 0.84);
       font-weight: 300;
     }
@@ -342,7 +322,7 @@
       color: #f2e1b6;
       font-size: 26px;
       line-height: 1.2;
-      max-width: 520px;
+      max-width: 650px;
     }
 
     .hero-actions {
@@ -397,7 +377,6 @@
       line-height: 1.55;
     }
 
-    /* INTRO */
     .intro-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
@@ -451,7 +430,6 @@
       display: block;
     }
 
-    /* HIGHLIGHTS */
     .highlights-wrap {
       background: var(--dark);
       color: var(--white);
@@ -515,7 +493,6 @@
       line-height: 1.65;
     }
 
-    /* JOURNEY */
     .journey-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -554,7 +531,6 @@
       font-size: 15px;
     }
 
-    /* CURATOR */
     .curator-wrap {
       background: var(--bg-soft);
     }
@@ -604,18 +580,9 @@
       font-size: 30px !important;
       line-height: 1.18 !important;
       color: #211912 !important;
-      max-width: 560px;
+      max-width: 600px;
     }
 
-    .curator-sign {
-      margin-top: 24px;
-      font-size: 15px;
-      color: #3f352e;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    /* INCLUDED */
     .included-wrap {
       background: var(--dark-soft);
       color: var(--white);
@@ -692,18 +659,31 @@
     }
 
     .not-included {
-      margin-top: 18px;
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(212, 185, 120, 0.08);
-      border: 1px solid rgba(212, 185, 120, 0.18);
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 14px;
+      margin-top: 24px;
+      padding: 24px 24px;
+      border-radius: 24px;
+      background: rgba(212, 185, 120, 0.14);
+      border: 1px solid rgba(212, 185, 120, 0.32);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 15px;
+      line-height: 1.65;
     }
 
-    /* PRICING */
+    .not-included strong {
+      display: block;
+      color: var(--gold-soft);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
     .pricing-wrap {
       background: var(--bg-warm);
+    }
+
+    .pricing-title-simple h2 {
+      font-size: clamp(42px, 5.4vw, 78px);
     }
 
     .pricing-grid {
@@ -816,7 +796,6 @@
       line-height: 1.55;
     }
 
-    /* RESERVE */
     .reserve-wrap {
       position: relative;
       background: var(--dark);
@@ -851,7 +830,7 @@
     }
 
     .reserve-inner p {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto 14px;
       color: rgba(255, 255, 255, 0.76);
       font-size: 18px;
@@ -862,13 +841,15 @@
       justify-content: center;
     }
 
-    .small-note {
-      margin-top: 18px !important;
-      font-size: 13px !important;
-      color: rgba(255, 255, 255, 0.54) !important;
+    .spots-note {
+      margin-top: 22px !important;
+      color: var(--gold-soft) !important;
+      font-size: 15px !important;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
     }
 
-    /* FOOTER */
     .footer {
       background: #0d0b09;
       color: rgba(255, 255, 255, 0.58);
@@ -900,7 +881,6 @@
       color: var(--gold-soft);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 1100px) {
       .highlights {
         grid-template-columns: repeat(2, 1fr);
@@ -1003,6 +983,7 @@
     }
   </style>
 </head>
+
 <body>
   <header class="nav">
     <div class="nav-inner">
@@ -1045,28 +1026,19 @@
           <div class="hero-copy">
             <div class="eyebrow">Germany · October 21–26 · Limited to 10 participants</div>
             <h1>OROMMA Experience Germany</h1>
+
             <p>
-              A curated private journey into gemstones, jewelry, sourcing and refined discovery —
-              designed for those who want to experience the world of jewelry with beauty, clarity and ease.
+              A private group experience in Munich, Germany, centered around gemstones, minerals, jewelry,
+              beautiful places, and unforgettable moments shared with amazing people who genuinely love this world as you do.
             </p>
 
             <div class="hero-note">
-              More than a trip. A beautifully arranged way to enter a world that usually feels inaccessible.
+              More than a trip. A chance to step into a completely different atmosphere for a few days and experience something most people never do.
             </div>
 
             <div class="hero-actions btn-row">
-              <a
-                class="btn btn-primary"
-                href="#reserve"
-              >
-                Request private reservation
-              </a>
-              <a
-                class="btn btn-secondary"
-                href="#journey"
-              >
-                View the journey
-              </a>
+              <a class="btn btn-primary" href="#reserve">Request private reservation</a>
+              <a class="btn btn-secondary" href="#journey">View the journey</a>
             </div>
           </div>
 
@@ -1081,17 +1053,17 @@
 
               <div class="hero-meta-item">
                 <strong>Access</strong>
-                <span>Private early access to a leading European gem and jewelry fair, with guidance and calm direction.</span>
+                <span>Private early access to one of Europe’s leading gem and jewelry fairs, before opening to the general public.</span>
               </div>
 
               <div class="hero-meta-item">
                 <strong>Atmosphere</strong>
-                <span>A small curated group, beautiful pacing, selected places, and everything already arranged.</span>
+                <span>A mix of beautiful locations, good energy, spontaneous conversations, and the kind of moments that make a trip feel genuinely memorable.</span>
               </div>
 
               <div class="hero-meta-item">
                 <strong>Ideal for</strong>
-                <span>Those who want to explore jewelry, gemstones and sourcing in a more intentional, elegant and clear way.</span>
+                <span>For people who enjoy experiences that feel exciting, inspiring, and outside of the ordinary, especially when they involve gemstones, jewelry, travel, new discoveries, and great company.</span>
               </div>
             </div>
           </aside>
@@ -1104,36 +1076,39 @@
         <div>
           <div class="eyebrow">Why this feels different</div>
           <h2 class="intro-big">
-            It brings together emotion, access, beauty and clarity — without the overwhelm.
+            Because it transforms a visit to the fair into a much bigger experience, combining gemstones, travel, Europe, inspiring moments, and the kind of memories that stay with you long after returning home.
           </h2>
         </div>
 
         <div class="intro-copy">
           <p>
-            Most people visit jewelry fairs without truly knowing how to navigate them. There is too much information,
-            too many suppliers, too many decisions, and not enough calm guidance.
+            Walking through a fair like this is an experience in itself. Thousands of gemstones, minerals,
+            jewelry pieces, suppliers, colors, textures, and ideas all gathered in one place.
           </p>
+
           <p>
-            OROMMA Experience is designed to change that. It gives you a clear and beautiful way to explore the world of
-            gemstones, minerals, jewelry and sourcing, while enjoying Munich through a seamless, refined and well-curated journey.
+            Combined with the atmosphere of Munich, the restaurants, the city, the lake, and the rhythm of the trip itself,
+            it becomes something far beyond simply attending an event.
           </p>
+
           <p>
-            It is not only about what you will see. It is about how you will experience it: with more confidence,
-            more direction, and more pleasure.
+            It becomes the kind of trip that makes you experience Europe in a completely different way.
           </p>
 
           <div class="facts">
             <div class="fact">
               <strong>Curated group</strong>
-              <span>Maximum 10 participants, to keep the experience intentional and personal.</span>
+              <span>Maximum 10 participants, allowing the experience to feel more personal, close-knit, and enjoyable to share together.</span>
             </div>
+
             <div class="fact">
-              <strong>Beautiful rhythm</strong>
-              <span>Fair access, city discovery, dining and Tegernsee — balanced with elegance and ease.</span>
+              <strong>Well-balanced experience</strong>
+              <span>A mix of fair access, city discovery, good food, and time to enjoy Munich and Tegernsee at a natural pace.</span>
             </div>
+
             <div class="fact">
-              <strong>Clear value</strong>
-              <span>You enjoy the experience while gaining insights that help you move through the fair with more clarity.</span>
+              <strong>A more enjoyable way to explore the fair</strong>
+              <span>Spend less time trying to figure everything out, and more time discovering, exploring, and enjoying everything the fair has to offer.</span>
             </div>
           </div>
         </div>
@@ -1145,11 +1120,12 @@
         <div class="section-head">
           <div>
             <div class="eyebrow">Curated Highlights</div>
-            <h2>A journey built around access, atmosphere and discovery.</h2>
+            <h2>A few unforgettable days surrounded by gemstones, Germany, and inspiring experiences.</h2>
           </div>
+
           <p>
-            Every part of the experience has been selected to feel elevated yet easy — from the fair itself, to the city,
-            to the lake, to the people you will share it with.
+            From the atmosphere of the fair to the streets of Munich and the landscapes of Tegernsee,
+            each part of the trip brings something different to discover and enjoy.
           </p>
         </div>
 
@@ -1161,7 +1137,7 @@
             <div class="highlight-body">
               <h3>Leading European Gem & Jewelry Fair</h3>
               <p>
-                Explore one of Europe’s most important gem, mineral and jewelry fairs with a more refined sense of direction.
+                Explore one of Europe’s most important gem, mineral, and jewelry fairs in a more guided and enjoyable way.
               </p>
             </div>
           </article>
@@ -1173,7 +1149,7 @@
             <div class="highlight-body">
               <h3>Private Early Access</h3>
               <p>
-                Experience the fair before public opening, in a setting that feels calmer, more intimate and more exclusive.
+                Experience the fair before it opens to the general public, allowing for a calmer and more comfortable experience.
               </p>
             </div>
           </article>
@@ -1185,7 +1161,7 @@
             <div class="highlight-body">
               <h3>Tegernsee Experience</h3>
               <p>
-                A beautifully curated day of lake views, mountain atmosphere, village charm and natural elegance.
+                A beautifully arranged day of lake views, mountain atmosphere, a charming village, and time to simply enjoy the surroundings.
               </p>
             </div>
           </article>
@@ -1197,7 +1173,7 @@
             <div class="highlight-body">
               <h3>Munich, Seamlessly Arranged</h3>
               <p>
-                City walks, local jewelry shops, selected dining and carefully planned details — all already considered for you.
+                City walks, local jewelry shops, selected dining and carefully planned details, all already considered for you.
               </p>
             </div>
           </article>
@@ -1210,11 +1186,12 @@
         <div class="section-head">
           <div>
             <div class="eyebrow">Your Curated Journey</div>
-            <h2>Six days shaped with intention.</h2>
+            <h2>Your experience, day by day</h2>
           </div>
+
           <p>
-            The experience combines jewelry, sourcing, discovery, culture and beautiful pacing —
-            so each day feels distinct while remaining coherent as a whole.
+            Each day brings a different mix of fairs, gemstones, city life, local restaurants, landscapes,
+            and new discoveries, making the entire trip feel dynamic from beginning to end.
           </p>
         </div>
 
@@ -1263,7 +1240,7 @@
             <div class="day-tag">Day 6 · October 26</div>
             <h3>Departure</h3>
             <p>
-              Final breakfast, hotel pick-up and transfer to Munich Airport — a calm and well-arranged departure.
+              Final breakfast, hotel pick-up and transfer to Munich Airport, a calm and well-arranged departure.
             </p>
           </article>
         </div>
@@ -1281,22 +1258,23 @@
           <h2>Lily Camarena</h2>
 
           <p>
-            Lily Camarena is the founder of OROMMA. Her work is rooted in a refined sensitivity to beauty, detail and value —
-            shaped through years of experience in the world of fine jewelry and gemstones.
-          </p>
-
-          <p class="curator-pull">
-            Her role is not simply to guide you through the experience. It is to help you see it differently.
+            Lily Camarena is the founder of OROMMA and has spent years immersed in the world of gemstones,
+            jewelry, fairs, suppliers, and design.
           </p>
 
           <p>
-            To bring clarity where others feel overwhelmed. To help you recognize what truly matters.
-            To move through beauty, sourcing and discovery with more intention, taste and quiet confidence.
+            What began as a personal passion gradually became a way of life centered around discovery,
+            travel, creativity, and the relationships built within this industry.
           </p>
 
-          <div class="curator-sign">
-            This experience is an extension of her eye.
-          </div>
+          <p>
+            Through OROMMA Experience, she opens the door to that world in a more personal and approachable way —
+            sharing not only the fair itself, but also the atmosphere, the discoveries, and the moments surrounding it.
+          </p>
+
+          <p class="curator-pull">
+            Her goal is simple: to give others the opportunity to experience this world in a more personal and unforgettable way.
+          </p>
         </div>
       </div>
     </section>
@@ -1306,11 +1284,11 @@
         <div class="section-head">
           <div>
             <div class="eyebrow">What’s Included</div>
-            <h2>Everything essential, thoughtfully arranged.</h2>
+            <h2>Everything arranged so you can simply enjoy the experience.</h2>
           </div>
+
           <p>
-            The goal is simple: remove the friction, preserve the elegance,
-            and let you focus on being fully present in the experience.
+            The goal is simple: to make the experience feel easy, comfortable, and enjoyable from beginning to end.
           </p>
         </div>
 
@@ -1323,19 +1301,23 @@
               <div class="included-item">All transportation throughout the experience</div>
               <div class="included-item">Accommodation in a carefully selected centrally located hotel in Munich</div>
               <div class="included-item">Daily breakfast</div>
-              <div class="included-item">Two days of early access to the jewelry fair, plus one additional public opening day</div>
+              <div class="included-item">Two days of early access to the jewelry fair, plus one additional day during general public opening</div>
               <div class="included-item">Tegernsee experience including boat and cable car viewpoint</div>
               <div class="included-item">Travel insurance coverage: medical assistance, travel support and personal liability</div>
-              <div class="included-item">A welcome gift, fair guidance and a professionally edited video of the experience</div>
+              <div class="included-item">A carefully curated welcome gift</div>
+              <div class="included-item">Guidance and insights to navigate the fair and identify valuable opportunities</div>
+              <div class="included-item">A professionally edited video capturing the experience, ready to be shared on social media</div>
+              <div class="included-item">Selected meals</div>
             </div>
 
             <div class="not-included">
-              <strong>Not included:</strong> flights to/from Munich, personal expenses and cancellation insurance.
+              <strong>Not included</strong>
+              Flights to/from Munich, personal expenses and cancellation insurance.
             </div>
           </div>
 
           <div class="included-visual">
-            <img src="tegernsee.png" alt="Tegernsee experience" />
+            <img src="included-photo.jpeg" alt="Tegernsee lake and mountain view" />
           </div>
         </div>
       </div>
@@ -1343,13 +1325,14 @@
 
     <section class="section pricing-wrap" id="pricing">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head pricing-title-simple">
           <div>
-            <div class="eyebrow">Pricing & Payment Terms</div>
-            <h2>Clear, elegant and limited.</h2>
+            <div class="eyebrow">Reservation Details</div>
+            <h2>Pricing & Payment Terms</h2>
           </div>
+
           <p>
-            This is a small curated experience. Once the available places are filled, the experience is closed.
+            This is a small group experience with limited spots available. Once the group is full, registrations will close.
           </p>
         </div>
 
@@ -1359,7 +1342,7 @@
             <div class="price-value">€2,999</div>
             <p>Available for a limited time before public launch.</p>
             <ul>
-              <li>Full payment by May 20th, 2026.</li>
+              <li>Full payment by Jun 15th, 2026.</li>
               <li>Early access pricing applies only to full payments completed by this date.</li>
               <li>If full payment is not completed by this date, the standard price will apply.</li>
             </ul>
@@ -1368,7 +1351,7 @@
           <article class="price-card">
             <div class="price-label">Standard Price</div>
             <div class="price-value">€3,499</div>
-            <p>Applies after May 20th, 2026, or once early access spots are filled.</p>
+            <p>Applies after Jun 15th, 2026, or once early access spots are filled.</p>
             <ul>
               <li>Balance must be fully paid by August 1st, 2026.</li>
               <li>Spot is confirmed once the deposit is received.</li>
@@ -1404,13 +1387,16 @@
     <section class="section reserve-wrap" id="reserve">
       <div class="container reserve-inner">
         <div class="eyebrow">Reserve Your Spot</div>
-        <h2>If it feels aligned, it probably is.</h2>
+
+        <h2>If it feels right for you, it probably is</h2>
+
         <p>
-          This experience is not designed for everyone. It is designed for those who value beauty,
-          access, intention and a more refined way of entering the world of jewelry.
+          Designed for those who genuinely love the world of gems, minerals, jewelry, fairs, and discovery
+          and would enjoy experiencing it all alongside a small group of people who share the same passion.
         </p>
-        <p>
-          Spots are limited to 10 participants.
+
+        <p class="spots-note">
+          Spots are limited to a max of 10 participants.
         </p>
 
         <div class="btn-row reserve-actions">
@@ -1430,10 +1416,6 @@
             Contact on Instagram
           </a>
         </div>
-
-        <p class="small-note">
-          Stripe and SumUp payment links can be connected in the next phase once the final design is approved.
-        </p>
       </div>
     </section>
   </main>
