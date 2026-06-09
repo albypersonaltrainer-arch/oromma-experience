@@ -82,7 +82,7 @@ export default async function handler(request, response) {
     }
 
     return response.status(200).json({
-      ok: true
+      ok: true 
     });
   } catch (error) {
     console.error("Waiting list API error:", error);
