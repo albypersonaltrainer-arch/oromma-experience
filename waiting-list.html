@@ -1,1 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>OROMMA Experience Germany Waiting List</title>
+  <meta
+    name="description"
+    content="Join the OROMMA Experience Germany Waiting List for a small group gemstone and jewelry experience in Munich, Germany."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --oro-bg: #f6efe6;
+      --oro-bg-soft: #fbf7f0;
+      --oro-black: #111111;
+      --oro-charcoal: #1a1714;
+      --oro-muted: #6d6258;
+      --oro-gold: #c99a3d;
+      --oro-gold-dark: #9f7325;
+      --oro-line: rgba(201, 154, 61, 0.35);
+      --oro-white: #ffffff;
+      --oro-error: #9f2f2f;
+      --oro-success: #216e45;
+      --shadow: 0 24px 80px rgba(30, 22, 12, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--oro-black);
+      background:
+        radial-gradient(circle at top left, rgba(201, 154, 61, 0.18), transparent 28rem),
+        radial-gradient(circle at bottom right, rgba(17, 17, 17, 0.12), transparent 32rem),
+        linear-gradient(135deg, #fbf7f0 0%, #f4eadf 48%, #efe1d0 100%);
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .shell {
+      width: min(1160px, 100%);
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid var(--oro-line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border-radius: 30px;
+      backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .shell::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(201, 154, 61, 0.32);
+      border-radius: 22px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 720px;
+      background:
+        linear-gradient(180deg, rgba(12, 10, 8, 0.14), rgba(12, 10, 8, 0.78)),
+        url("munich.png") center / cover no-repeat;
+      color: var(--oro-white);
+      padding: 46px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(16, 12, 8, 0.68), rgba(16, 12, 8, 0.16) 56%, rgba(16, 12, 8, 0.46)),
+        radial-gradient(circle at 28% 15%, rgba(201, 154, 61, 0.36), transparent 24rem);
+      pointer-events: none;
+    }
+
+    .visual-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.92);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand-mark img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      line-height: 1.05;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 90px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+      background: var(--oro-gold);
+      border-radius: 999px;
+      box-shadow: 0 0 0 6px rgba(201, 154, 61, 0.18);
+    }
+
+    h1 {
+      margin: 22px 0 0;
+      max-width: 620px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(44px, 5vw, 78px);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+      color: var(--oro-white);
+    }
+
+    .intro {
+      max-width: 530px;
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 17px;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .info-card {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      border-radius: 18px;
+      padding: 15px;
+    }
+
+    .info-card small {
+      display: block;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .info-card strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .bottom-note {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 22px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .bottom-note strong {
+      color: #fff;
+    }
+
+    .form-side {
+      position: relative;
+      padding: 62px 54px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.72), rgba(251,247,240,0.9)),
+        radial-gradient(circle at top right, rgba(201, 154, 61, 0.18), transparent 18rem);
+      display: flex;
+      align-items: center;
+    }
+
+    .form-card {
+      width: 100%;
+      position: relative;
+      z-index: 5;
+    }
+
+    .form-kicker {
+      color: var(--oro-gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 900;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .form-card h2 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--oro-black);
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    .form-card .lead {
+      margin: 18px 0 34px;
+      color: var(--oro-muted);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--oro-charcoal);
+    }
+
+    input {
+      width: 100%;
+      min-height: 54px;
+      border: 1px solid rgba(27, 22, 17, 0.16);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.74);
+      color: var(--oro-black);
+      padding: 0 16px;
+      font: inherit;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    input::placeholder {
+      color: rgba(109, 98, 88, 0.6);
+    }
+
+    input:focus {
+      border-color: rgba(201, 154, 61, 0.72);
+      box-shadow: 0 0 0 4px rgba(201, 154, 61, 0.16);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .privacy {
+      margin: 6px 0 2px;
+      color: var(--oro-muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .privacy strong {
+      color: var(--oro-charcoal);
+    }
+
+    button {
+      min-height: 58px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--oro-black), #2a2119);
+      color: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 18px 36px rgba(17, 17, 17, 0.22);
+      transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 48px rgba(17, 17, 17, 0.28);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.68;
+      transform: none;
+    }
+
+    .message {
+      display: none;
+      border-radius: 18px;
+      padding: 16px 17px;
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+
+    .message.show {
+      display: block;
+    }
+
+    .message.success {
+      color: var(--oro-success);
+      background: rgba(33, 110, 69, 0.10);
+      border: 1px solid rgba(33, 110, 69, 0.22);
+    }
+
+    .message.error {
+      color: var(--oro-error);
+      background: rgba(159, 47, 47, 0.10);
+      border: 1px solid rgba(159, 47, 47, 0.22);
+    }
+
+    .footer-mini {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: rgba(109, 98, 88, 0.84);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    .footer-mini span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-mini span::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: var(--oro-gold);
+      border-radius: 999px;
+    }
+
+    .hp {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @media (max-width: 940px) {
+      .page {
+        padding: 16px;
+      }
+
+      .shell {
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+      }
+
+      .visual {
+        min-height: auto;
+        padding: 34px 28px;
+      }
+
+      .eyebrow {
+        margin-top: 54px;
+      }
+
+      .info-row {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-note {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .form-side {
+        padding: 42px 28px 48px;
+      }
+
+      .two-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        padding: 0;
+      }
+
+      .shell {
+        border-radius: 0;
+        min-height: 100vh;
+      }
+
+      .shell::before {
+        inset: 9px;
+        border-radius: 0;
+      }
+
+      .visual {
+        padding: 30px 24px;
+      }
+
+      .brand-mark {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-text strong {
+        font-size: 22px;
+      }
+
+      .brand-text {
+        font-size: 11px;
+      }
+
+      .form-side {
+        padding: 38px 24px 44px;
+      }
+
+      input,
+      button {
+        min-height: 56px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="shell" aria-label="OROMMA Experience Germany Waiting List">
+      <aside class="visual">
+        <div class="visual-content">
+          <div class="brand">
+            <div class="brand-mark">
+              <img src="oromma-logo.png" alt="OROMMA logo" />
+            </div>
+
+            <div class="brand-text">
+              <strong>OROMMA</strong>
+              Experience
+            </div>
+          </div>
+
+          <div class="eyebrow">
+            <span></span>
+            Munich, Germany · October 21–26, 2026
+          </div>
+
+          <h1>Germany Waiting List</h1>
+
+          <p class="intro">
+            A small group experience for gemstone and jewelry lovers visiting one of Europe’s biggest gem and mineral fairs.
+          </p>
+
+          <div class="info-row">
+            <div class="info-card">
+              <small>Location</small>
+              <strong>Munich, Germany</strong>
+            </div>
+
+            <div class="info-card">
+              <small>Dates</small>
+              <strong>October 21–26, 2026</strong>
+            </div>
+
+            <div class="info-card">
+              <small>Experience</small>
+              <strong>Small Group</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-note">
+          <div>
+            <strong>OROMMA Experience</strong><br />
+            Gem show · Inspiration · Munich · Tegernsee · Small group
+          </div>
+
+          <div>
+            Private details will be shared with selected guests.
+          </div>
+        </div>
+      </aside>
+
+      <section class="form-side">
+        <div class="form-card">
+          <div class="form-kicker">Join the private list</div>
+
+          <h2>OROMMA Experience Germany Waiting List</h2>
+
+          <p class="lead">
+            Leave your details below and we will contact you with more information about the Germany 2026 experience.
+          </p>
+
+          <form id="waitingListForm">
+            <div class="field">
+              <label for="full_name">Full name *</label>
+              <input
+                id="full_name"
+                name="full_name"
+                type="text"
+                placeholder="Your full name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="two-cols">
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+34 600 000 000"
+                  autocomplete="tel"
+                />
+              </div>
+
+              <div class="field">
+                <label for="instagram_id">Instagram ID</label>
+                <input
+                  id="instagram_id"
+                  name="instagram_id"
+                  type="text"
+                  placeholder="@yourinstagram"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+
+            <input
+              class="hp"
+              type="text"
+              id="website"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <p class="privacy">
+              <strong>Privacy note:</strong> By submitting this form, you agree to be contacted by OROMMA Experience regarding the Germany 2026 waiting list.
+            </p>
+
+            <button id="submitButton" type="submit">
+              Join the Waiting List
+            </button>
+
+            <div id="formMessage" class="message" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="footer-mini">
+            <span>Gem Show</span>
+            <span>Jewelry Lovers</span>
+            <span>Munich 2026</span>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("waitingListForm");
+    const button = document.getElementById("submitButton");
+    const message = document.getElementById("formMessage");
+
+    function showMessage(type, text) {
+      message.className = "message show " + type;
+      message.textContent = text;
+    }
+
+    function normalizeInstagram(value) {
+      const clean = value.trim();
+      if (!clean) return "";
+      return clean.startsWith("@") ? clean : "@" + clean;
+    }
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const honeypot = document.getElementById("website").value;
+      if (honeypot) {
+        return;
+      }
+
+      const fullName = document.getElementById("full_name").value.trim();
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const phone = document.getElementById("phone").value.trim();
+      const instagramId = normalizeInstagram(document.getElementById("instagram_id").value);
+
+      if (!fullName || !email) {
+        showMessage("error", "Please complete your full name and email.");
+        return;
+      }
+
+      button.disabled = true;
+      button.textContent = "Sending...";
+
+      try {
+        const response = await fetch("/api/waiting-list", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            full_name: fullName,
+            email: email,
+            phone: phone,
+            instagram_id: instagramId,
+            website: honeypot
+          })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.ok) {
+          showMessage(
+            "error",
+            result.message || "Something went wrong. Please try again or contact OROMMA Experience directly."
+          );
+          return;
+        }
+
+        form.reset();
+
+        showMessage(
+          "success",
+          "Thank you. You are now on the OROMMA Experience Germany Waiting List. We will contact you soon with more details."
+        );
+      } catch (error) {
+        showMessage("error", "Connection error. Please try again in a moment.");
+      } finally {
+        button.disabled = false;
+        button.textContent = "Join the Waiting List";
+      }
+    });
+  </script>
+</body>
+</html>
