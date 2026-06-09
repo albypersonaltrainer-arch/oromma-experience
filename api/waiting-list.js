@@ -8,9 +8,9 @@ export default async function handler(request, response) {
 
   try {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY;
 
-    if (!supabaseUrl || !supabaseKey) {
+    if (!supabaseUrl || !supabaseSecretKey) {
       return response.status(500).json({
         ok: false,
         message: "Server configuration error."
@@ -53,8 +53,8 @@ export default async function handler(request, response) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "apikey": supabaseKey,
-          "Authorization": `Bearer ${supabaseKey}`,
+          "apikey": supabaseSecretKey,
+          "Authorization": `Bearer ${supabaseSecretKey}`,
           "Prefer": "return=minimal"
         },
         body: JSON.stringify({
@@ -82,7 +82,7 @@ export default async function handler(request, response) {
     }
 
     return response.status(200).json({
-      ok: true 
+      ok: true
     });
   } catch (error) {
     console.error("Waiting list API error:", error);
