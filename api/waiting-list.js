@@ -7,18 +7,24 @@ export default async function handler(request, response) {
   }
 
   try {
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const rawSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY;
     const supabasePublicKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
     const activeKey = supabaseSecretKey || supabasePublicKey;
 
-    if (!supabaseUrl || !activeKey) {
+    if (!rawSupabaseUrl || !activeKey) {
       return response.status(500).json({
         ok: false,
         message: "Server configuration error. Missing Supabase URL or key."
       });
     }
+
+    const cleanSupabaseUrl = rawSupabaseUrl
+      .replace(/\/+$/, "")
+      .replace(/\/rest\/v1$/, "");
+
+    const restEndpoint = `${cleanSupabaseUrl}/rest/v1/oromma_germany_waiting_list`;
 
     const body = request.body || {};
 
@@ -61,32 +67,29 @@ export default async function handler(request, response) {
       user_agent: request.headers["user-agent"] || null
     };
 
-    const insertResponse = await fetch(
-      `${supabaseUrl}/rest/v1/oromma_germany_waiting_list`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": activeKey,
-          "Authorization": `Bearer ${activeKey}`,
-          "Prefer": "return=representation"
-        },
-        body: JSON.stringify(payload)
-      }
-    );
-
-    const responseText = await insertResponse.text();
+    const insertResponse = await fetch(restEndpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": activeKey,
+        "Authorization": `Bearer ${activeKey}`,
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify(payload)
+    });
 
     if (!insertResponse.ok) {
+      const errorText = await insertResponse.text();
+
       console.error("Supabase insert error:", {
         status: insertResponse.status,
         statusText: insertResponse.statusText,
-        responseText
+        responseText: errorText
       });
 
       return response.status(500).json({
         ok: false,
-        message: `Supabase error ${insertResponse.status}: ${responseText}`
+        message: `Supabase error ${insertResponse.status}: ${errorText}`
       });
     }
 
