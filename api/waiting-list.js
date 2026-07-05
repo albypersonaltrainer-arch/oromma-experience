@@ -6,39 +6,49 @@ export default async function handler(request, response) {
     });
   }
 
-  try {
-    const rawSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-    const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY || "";
-    const supabasePublicKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+  const rawSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+  const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY || "";
+  const supabasePublicKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+  const activeKey = (supabaseSecretKey || supabasePublicKey).trim();
 
-    const activeKey = (supabaseSecretKey || supabasePublicKey).trim();
+  function cleanValue(value) {
+    return String(value || "")
+      .trim()
+      .replace(/^["']|["']$/g, "")
+      .replace(/\/+$/g, "");
+  }
 
-    function cleanUrl(value) {
-      return String(value || "")
-        .trim()
-        .replace(/^["']|["']$/g, "")
-        .replace(/\/+$/g, "")
-        .replace(/\/rest\/v1$/g, "");
+  function buildEndpoints(rawUrl) {
+    const raw = cleanValue(rawUrl);
+    const endpoints = [];
+
+    if (!raw) return endpoints;
+
+    try {
+      const parsed = new URL(raw);
+      const origin = parsed.origin;
+
+      endpoints.push(`${origin}/rest/v1/oromma_germany_waiting_list`);
+
+      if (raw.endsWith("/rest/v1")) {
+        endpoints.push(`${raw}/oromma_germany_waiting_list`);
+      }
+
+      if (!raw.includes("/rest/v1")) {
+        endpoints.push(`${raw}/rest/v1/oromma_germany_waiting_list`);
+      }
+    } catch (error) {
+      return endpoints;
     }
 
-    const cleanSupabaseUrl = cleanUrl(rawSupabaseUrl);
+    return [...new Set(endpoints)];
+  }
 
-    if (!cleanSupabaseUrl || !activeKey) {
+  try {
+    if (!rawSupabaseUrl || !activeKey) {
       return response.status(500).json({
         ok: false,
         message: "Server configuration error. Missing Supabase URL or key."
-      });
-    }
-
-    let restEndpoint;
-
-    try {
-      const parsedUrl = new URL(cleanSupabaseUrl);
-      restEndpoint = `${parsedUrl.origin}/rest/v1/oromma_germany_waiting_list`;
-    } catch (urlError) {
-      return response.status(500).json({
-        ok: false,
-        message: "Server configuration error. Invalid Supabase URL."
       });
     }
 
@@ -83,35 +93,58 @@ export default async function handler(request, response) {
       user_agent: request.headers["user-agent"] || null
     };
 
-    const insertResponse = await fetch(restEndpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "apikey": activeKey,
-        "Authorization": `Bearer ${activeKey}`,
-        "Prefer": "return=minimal"
-      },
-      body: JSON.stringify(payload)
-    });
+    const endpoints = buildEndpoints(rawSupabaseUrl);
 
-    if (!insertResponse.ok) {
-      const errorText = await insertResponse.text();
-
-      console.error("Supabase insert error:", {
-        status: insertResponse.status,
-        statusText: insertResponse.statusText,
-        responseText: errorText
-      });
-
+    if (!endpoints.length) {
       return response.status(500).json({
         ok: false,
-        message: `Supabase error ${insertResponse.status}: ${errorText}`
+        message: "Server configuration error. Invalid Supabase URL."
       });
     }
 
-    return response.status(200).json({
-      ok: true,
-      message: "Saved correctly."
+    const errors = [];
+
+    for (const endpoint of endpoints) {
+      try {
+        const insertResponse = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": activeKey,
+            "Authorization": `Bearer ${activeKey}`,
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (insertResponse.ok) {
+          return response.status(200).json({
+            ok: true,
+            message: "Saved correctly."
+          });
+        }
+
+        const errorText = await insertResponse.text();
+
+        errors.push({
+          endpoint: endpoint.replace(/https:\/\/([^./]+)\./, "https://***."),
+          status: insertResponse.status,
+          error: errorText
+        });
+      } catch (fetchError) {
+        errors.push({
+          endpoint: endpoint.replace(/https:\/\/([^./]+)\./, "https://***."),
+          status: "fetch_failed",
+          error: fetchError.message || "fetch failed"
+        });
+      }
+    }
+
+    console.error("All Supabase insert attempts failed:", errors);
+
+    return response.status(500).json({
+      ok: false,
+      message: `Connection error. Supabase attempts failed: ${JSON.stringify(errors)}`
     });
   } catch (error) {
     console.error("Waiting list API error:", error);
