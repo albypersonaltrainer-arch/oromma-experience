@@ -659,6 +659,9 @@
   </main>
 
   <script>
+    const SUPABASE_REST_ENDPOINT = "https://bbwnmsveyhnymvluriyz.supabase.co/rest/v1/oromma_germany_waiting_list";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_pvTxN2zsmxJ7ae8nEXIWMA_tQVGHBKn";
+
     const form = document.getElementById("waitingListForm");
     const button = document.getElementById("submitButton");
     const message = document.getElementById("formMessage");
@@ -692,31 +695,41 @@
         return;
       }
 
+      const emailLooksValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!emailLooksValid) {
+        showMessage("error", "Please enter a valid email address.");
+        return;
+      }
+
       button.disabled = true;
       button.textContent = "Sending...";
 
       try {
-        const response = await fetch("/api/waiting-list", {
+        const response = await fetch(SUPABASE_REST_ENDPOINT, {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_PUBLISHABLE_KEY,
+            "Authorization": "Bearer " + SUPABASE_PUBLISHABLE_KEY,
+            "Prefer": "return=minimal"
           },
           body: JSON.stringify({
             full_name: fullName,
             email: email,
-            phone: phone,
-            instagram_id: instagramId,
-            website: honeypot
+            phone: phone || null,
+            instagram_id: instagramId || null,
+            source: "qr_event",
+            event_name: "OROMMA Experience Germany 2026",
+            status: "new",
+            user_agent: navigator.userAgent || null
           })
         });
 
-        const result = await response.json();
-
-        if (!response.ok || !result.ok) {
-          showMessage(
-            "error",
-            result.message || "Something went wrong. Please try again or contact OROMMA Experience directly."
-          );
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error("Supabase error:", errorText);
+          showMessage("error", "Something went wrong. Please try again or contact OROMMA Experience directly.");
           return;
         }
 
@@ -727,6 +740,7 @@
           "Thank you. You are now on the OROMMA Experience Germany Waiting List. We will contact you soon with more details."
         );
       } catch (error) {
+        console.error("Connection error:", error);
         showMessage("error", "Connection error. Please try again in a moment.");
       } finally {
         button.disabled = false;
