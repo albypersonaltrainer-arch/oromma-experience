@@ -7,24 +7,40 @@ export default async function handler(request, response) {
   }
 
   try {
-    const rawSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY;
-    const supabasePublicKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    const rawSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+    const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY || "";
+    const supabasePublicKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
-    const activeKey = supabaseSecretKey || supabasePublicKey;
+    const activeKey = (supabaseSecretKey || supabasePublicKey).trim();
 
-    if (!rawSupabaseUrl || !activeKey) {
+    function cleanUrl(value) {
+      return String(value || "")
+        .trim()
+        .replace(/^["']|["']$/g, "")
+        .replace(/\/+$/g, "")
+        .replace(/\/rest\/v1$/g, "");
+    }
+
+    const cleanSupabaseUrl = cleanUrl(rawSupabaseUrl);
+
+    if (!cleanSupabaseUrl || !activeKey) {
       return response.status(500).json({
         ok: false,
         message: "Server configuration error. Missing Supabase URL or key."
       });
     }
 
-    const cleanSupabaseUrl = rawSupabaseUrl
-      .replace(/\/+$/, "")
-      .replace(/\/rest\/v1$/, "");
+    let restEndpoint;
 
-    const restEndpoint = `${cleanSupabaseUrl}/rest/v1/oromma_germany_waiting_list`;
+    try {
+      const parsedUrl = new URL(cleanSupabaseUrl);
+      restEndpoint = `${parsedUrl.origin}/rest/v1/oromma_germany_waiting_list`;
+    } catch (urlError) {
+      return response.status(500).json({
+        ok: false,
+        message: "Server configuration error. Invalid Supabase URL."
+      });
+    }
 
     const body = request.body || {};
 
